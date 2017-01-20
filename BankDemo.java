@@ -128,29 +128,32 @@ class BankDemo{
 		Customer c[] = new Customer[5];
 		int choice,id,d;
 		Scanner s = new Scanner(System.in);
-		String name,address;
+		String name,address,r;
 		String b = "y";
 		for(int i=0;i<5;i++){
 			System.out.println("enter you name");
-			s.nextLine();
+		//	s.nextLine();
 			name = s.nextLine();
 			System.out.println("enter your address");
-			s.nextLine();
+		//	s.nextLine();
 			address = s.nextLine();
 			System.out.println("enter your id");
-			id = s.nextInt();
+			r = s.nextLine();
+			id = Integer.parseInt(r);
 			c[i] = new Customer(id,name,address);
 			System.out.println("for SB Account 	type 1 for FD account type 2");
-			int type = s.nextInt();
+			String q = s.nextLine();
+			int type = Integer.parseInt(q);
 			c[i].createAccount(type);
 			if(type==1){
-				while(b=="y"){
+				while(b.equals("y")){
 					System.out.println("1 for deposit 2.for withdraw .4 for exit");
-					choice = s.nextInt();
+					String w = s.nextLine();
+					choice = Integer.parseInt(w);
 					c[i].transaction(choice);
-					System.out.println("if u want to continue press 1");
-					d = s.nextInt();
-					if(d!=1){
+					System.out.println("if u want to continue press y");
+				  b = s.nextLine();
+					if(b.equals("n")){
 						break;
 					}
 					/*System.out.println("Do you want to contine y/n");
@@ -161,9 +164,9 @@ class BankDemo{
 			}
 			else{
 				System.out.println("Do you want to close your account");
-				s.nextLine();
-				b = s.nextLine();
-				if(b == "y"){
+			  b = s.nextLine();
+
+				if(b.equals("y")){
 					c[i].transaction(3);
 				}
 
