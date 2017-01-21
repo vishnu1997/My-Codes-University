@@ -10,7 +10,6 @@ class Account{
 		accnumber = a;
 		balance = b;
 	}
-
 }
 //--------------------------------------------SBAccount class
 
@@ -115,6 +114,9 @@ class Customer{
 				ob1.withdraw(wit);
 				break;
 			case 3:
+				ob1.calc_interest();
+				break;
+			case 4:
 				ob2.close();
 				break;
 		}
@@ -132,10 +134,8 @@ class BankDemo{
 		String b = "y";
 		for(int i=0;i<5;i++){
 			System.out.println("enter you name");
-		//	s.nextLine();
 			name = s.nextLine();
 			System.out.println("enter your address");
-		//	s.nextLine();
 			address = s.nextLine();
 			System.out.println("enter your id");
 			r = s.nextLine();
@@ -147,32 +147,25 @@ class BankDemo{
 			c[i].createAccount(type);
 			if(type==1){
 				while(b.equals("y")){
-					System.out.println("1 for deposit 2.for withdraw .4 for exit");
+					System.out.println("1 for deposit 2.for withdraw 3.for interest.5 for exit");
 					String w = s.nextLine();
 					choice = Integer.parseInt(w);
 					c[i].transaction(choice);
-					System.out.println("if u want to continue press y");
+					System.out.println("if u want to continue press y or else press n");
 				  b = s.nextLine();
 					if(b.equals("n")){
 						break;
 					}
-					/*System.out.println("Do you want to contine y/n");
-					s.nextLine();
-					b = s.nextLine();*/
 				}
-
 			}
 			else{
 				System.out.println("Do you want to close your account");
 			  b = s.nextLine();
 
 				if(b.equals("y")){
-					c[i].transaction(3);
+					c[i].transaction(4);
 				}
-
 			}
-
 		}
-
 	}
 }

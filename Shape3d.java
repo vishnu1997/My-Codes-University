@@ -1,6 +1,6 @@
 package shape3d;
 
-import shape2d;
+//import shape2d;
 import java.io.*;
 import java.util.*;
 
