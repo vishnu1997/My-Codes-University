@@ -1,4 +1,4 @@
-import java.io.*;
+package pkaccount;
 
 public abstract class Account{
   protected int accnumber;
