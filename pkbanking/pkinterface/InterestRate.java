@@ -1,4 +1,4 @@
-package pkinterface;
+package pkbanking.pkinterface;
 
 public interface InterestRate{
   double sbrate = 4;

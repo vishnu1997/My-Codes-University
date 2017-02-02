@@ -1,4 +1,4 @@
-package pkcustomer;
+package pkbanking.pkcustomer;
 
 //import pkaccount.sb.*;
 import pkaccount.fd.*;
@@ -11,7 +11,7 @@ public class Customer{
 	SBAccount  ob1;
 	FDAccount  ob2;
 	//-------------------------------------------constructor
-	Customer(int id,String n,String ad){
+	public Customer(int id,String n,String ad){
 		cust_id = id;
 		name = n;
 		address = ad;

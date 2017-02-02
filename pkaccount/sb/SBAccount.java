@@ -1,10 +1,10 @@
-package sb;
+package pkaccount.sb;
 
-import pkinterface.*;
+import pkbanking.pkinterface.*;
 
 public class SBAccount extends Account implements Transaction,InterestRate{
 	//------------------------------------------constructor
-	SBAccount(int number,double init_balance){
+	public SBAccount(int number,double init_balance){
 		super(number,init_balance);
 		System.out.println("your SBAccount is created");
 	}
