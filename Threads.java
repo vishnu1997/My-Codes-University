@@ -1,6 +1,15 @@
 import java.io.*;
 
+class Sync{
 
+    synchronized static void call(String mes){
+      System.out.println("Synchronize me with "+mes);
+      try{
+        Thread.sleep(1000);
+        System.out.println("....");
+      }catch(Exception e){}
+    }
+}
 
 class extendsThread extends Thread{
   String name;
@@ -13,8 +22,9 @@ class extendsThread extends Thread{
   public void run(){
     try{
       for(int i=0;i<3;i++){
-        System.out.println("extended child thread: "+i+"   "+this);
-        sleep(500);
+      //  System.out.println("extended child thread: "+i+"   "+this);
+        Sync.call(name);
+        sleep(300);
       }
     }catch(Exception e){
       System.out.println("Exception caught in extended class");
@@ -24,7 +34,9 @@ class extendsThread extends Thread{
 
 class implementThread implements Runnable{
   Thread r;
+  static int e = 0;
   implementThread(){
+    e++;
     System.out.println("implemnted thread created");
     // new Thread(this,"implemented Thread").start(); this one can be used when no thread object r is declared inside the class
     r = new Thread(this,"implemented Thread");
@@ -33,8 +45,9 @@ class implementThread implements Runnable{
   public void run(){
     try{
       for(int i=0;i<3;i++){
-        System.out.println("implemented child thread: "+i+"  "+this);
-        Thread.sleep(1500);
+        //System.out.println("implemented child thread: "+i+"  "+this);
+        //Sync.call("Inside implementThread: " +e);
+        Thread.sleep(300);
       }
     }catch(Exception e){
       System.out.println("Exception caught in implementThread class");
@@ -44,6 +57,7 @@ class implementThread implements Runnable{
 }
 
 public class Threads{
+
   public static void main(String argd[]){
     Thread t = Thread.currentThread();
     Thread c,d;
