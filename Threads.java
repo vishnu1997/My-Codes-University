@@ -26,7 +26,7 @@ class extendsThread extends Thread{
         Sync.call(name);
         sleep(300);
       }
-    }catch(Exception e){
+    }catch(InterruptedException e){
       System.out.println("Exception caught in extended class");
     }
   }
@@ -49,7 +49,7 @@ class implementThread implements Runnable{
         //Sync.call("Inside implementThread: " +e);
         Thread.sleep(300);
       }
-    }catch(Exception e){
+    }catch(InterruptedException e){
       System.out.println("Exception caught in implementThread class");
     }
   }
@@ -70,7 +70,7 @@ public class Threads{
       a.join();
       b.join();
       z.r.join();
-    }catch(Exception e){
+    }catch(InterruptedException e){
       System.out.println("Error in main");
     }
     System.out.println("The name of the current thread is "+t);
