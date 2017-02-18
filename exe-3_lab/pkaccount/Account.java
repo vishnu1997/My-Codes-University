@@ -8,4 +8,8 @@ public abstract class Account{
     accnumber = 0;
     balance = 0;
   }
+  public Account(int i,double d){
+    accnumber = i;
+    balance = d;
+  }
 }

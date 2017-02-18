@@ -1,9 +1,10 @@
-package pkbanking.pkcustomer;
+package pkcustomer;
 
 //import pkaccount.sb.*;
 import pkaccount.fd.*;
 import pkaccount.sb.*;
 import pkaccount.*;
+import java.util.*;
 
 public class Customer{
 	int cust_id;
