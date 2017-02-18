@@ -10,7 +10,7 @@ public class SBAccount extends Account implements Transaction,InterestRate{
 	}
 	//-----------------------------------------deposit
 	public void deposit(double a){
-    if(balance>0)
+    	if(balance>0)
 		balance += a;
 		System.out.println("your balance is"+balance);
 	}
