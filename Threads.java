@@ -46,7 +46,7 @@ class implementThread implements Runnable{
     try{
       for(int i=0;i<3;i++){
         //System.out.println("implemented child thread: "+i+"  "+this);
-        //Sync.call("Inside implementThread: " +e);
+        //Sync.call("Inside implementThread: " +e)
         Thread.sleep(300);
       }
     }catch(InterruptedException e){
