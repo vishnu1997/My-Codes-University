@@ -1,0 +1,2 @@
+INFO	?	main	2017-03-01T01:45:54.486Z	org.javacs.Main#connectToNode	Connected to parent using socket on port 55282
+INFO	?	main	2017-03-01T01:45:54.758Z	org.javacs.JavaLanguageServer#doLint	Lint [/Users/vishnu/v1997/Learning/appletDemo.java]
