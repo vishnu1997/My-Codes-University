@@ -4,20 +4,14 @@ import java.io.*;
 
 //-------------------------------------------queue
 class queue{
-<<<<<<< HEAD
 //	int arr[10],front,rear;
-=======
+
 	int arr[]=new int[10];
 	int front,rear;
->>>>>>> 3e6863af30668d4c9a297c9ecbff2a680e02983b
 	boolean full,empty;
 
 	queue(){
-<<<<<<< HEAD
 	//	arr[]=0;
-=======
-		
->>>>>>> 3e6863af30668d4c9a297c9ecbff2a680e02983b
 		rear = -1;
 		front = -1;
 		full = false;
@@ -26,63 +20,32 @@ class queue{
 	}
 
 	synchronized void put(int i){
-		front++;
-		if(front>10){	
-				try{
-				wait();
-			}catch(InterruptedException e){
-				
-			}	
-			
+		
+		if(front>=9){	
+					try{
+					wait();
+				}catch(InterruptedException e){
+			}		
 		}
-<<<<<<< HEAD
-
+		front++;
 			notifyAll();
 			arr[front] = i;
-
-
-	}
-
-	synchronized void get(){
-
-		if(rear>-1){
-			wait();
-		}
-
-
-	}
-
-
-}
-
-class producer {
-
-	//queue q
-
-=======
-		
+			System.out.println(arr[front]);
 			
-			arr[front] = i;
-			System.out.println("put "+i);
-			notify();	
 	}
 
 	synchronized void get(){
-		
+
 		if(rear<0){
 			try{
-				wait();
-			}catch(InterruptedException e){
-				
-			}	
-								
+					wait();
+				}catch(InterruptedException e){
+			}		
 		}
-		int i = arr[rear];
-		System.out.println("got "+ i);
-		notify();		
-	}		
-	
-
+		System.out.println(arr[rear]);
+		rear--;
+		notifyAll();
+	}
 }
 
 //-------------------------------------------producer
@@ -98,14 +61,10 @@ class producer implements Runnable
 	}
 		
 	public void run(){
-		for(int i=0;i<10;i++){
+		for(int i=0;i<15;i++){
 			q.put(i);
-		}
-		
-		
+		}	
 	}
->>>>>>> 3e6863af30668d4c9a297c9ecbff2a680e02983b
-
 }
 
 //-------------------------------------------customer
@@ -129,15 +88,10 @@ class customer implements Runnable
 }
 
 //-------------------------------------------main
-public class exe5{
-<<<<<<< HEAD
-    public static void main(){}
-}
-=======
+public class exe5_lab{
 	public static void main(String arg[]){
 		queue q = new queue();
 		producer p = new producer(q);
 		customer c = new customer(q);
 	}
 }
->>>>>>> 3e6863af30668d4c9a297c9ecbff2a680e02983b

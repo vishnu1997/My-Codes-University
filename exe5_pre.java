@@ -62,7 +62,7 @@ class MultiplicationTable extends Thread{
 
 //------------------------------------Main method
 
-class exe5_lab{
+class exe5_pre{
 	public static void main(String az[]){
 				
 
