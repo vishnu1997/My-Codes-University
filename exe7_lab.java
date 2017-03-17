@@ -1,4 +1,7 @@
 import java.io.*;
+import java.util.*;
+
+
 
 class Point{
    double x,y;
@@ -44,8 +47,8 @@ class Point{
 	}
 
 	public int compareto(Point p){
-		double d = find_distance();
-		double d1 = p.find_distance();	
+		double d = find_distance(0,0);
+		double d1 = p.find_distance(0,0);	
 		if(d>d1){
 			return 1;
 		}
@@ -55,7 +58,7 @@ class Point{
 
 }
 
-class compareit implements Comparator{
+class compareit implements Comparator<Point>{
 	public int compare(Point p1,Point p2){
 		return p1.compareto(p2);
 	}
@@ -73,9 +76,9 @@ public static void main(String ar[]){
 	HashSet<Point> pset = new HashSet<Point>(); 
 	for(int i = 0;i<n;i++){
 		System.out.println("Enter the x co-ordinate");
-		int x = s.nextDouble();
+		double x = s.nextDouble();
 		System.out.println("Emter the y co-ordinate");
-		int y = s.nextDouble();
+		double y = s.nextDouble();
 		Point p = new Point(x,y);
 		pset.add(p);
 	}
@@ -83,24 +86,26 @@ public static void main(String ar[]){
 	ArrayList<Point> plist = new ArrayList<Point>(pset);
 	plist.sort(new compareit());
 
-	Iterator it1 = plist.iterator();
+	Iterator<Point> it1 = plist.iterator();
 	while(it1.hasNext()){
-		Point p1 = it1.next();
+		Point p1 = (Point)it1.next();
 		double d = p1.find_distance(0,0);
 		System.out.println("the distance between the origin is"+d);
 
 	
 	}
-	Iterator it2 = plist.iterator();
-	while(itr2.hasNext()){
-		int j = itr2.nextIndex();	
-		Iterator itr3 = plist.iterator(j);
-		while(itr3.hasNext()){
-			
-			
+	Iterator<Point> it2 = plist.iterator();
+	while(it2.hasNext()){
+		Point p3 = (Point)it2.next();
+		int j = it2.nextIndex();	
+		Iterator<Point> it3 = plist.iterator(j);
+		while(it3.hasNext()){
+			Point p4 = (Point)it3.next();
+			double x = p3.find_distance(p4);
+			System.out.println("The distance between points is"+x);
 		}
 			
 	}
-]
+}
 }
 
