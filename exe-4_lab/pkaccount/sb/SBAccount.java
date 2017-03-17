@@ -12,7 +12,6 @@ public class SBAccount extends Account implements Transaction,InterestRate{
 	}
 	//-----------------------------------------deposit
 	public void deposit(double a) throws IllegalArgumentException{
-			System.out.println("mmoo "+a);
     	if(a>0){
 			if(balance>0)
 				balance += a;	
@@ -20,7 +19,6 @@ public class SBAccount extends Account implements Transaction,InterestRate{
 		else{
 			throw new IllegalArgumentException("Can't deposit'");
 		}	
-		System.out.println("your balancuyjhjhje is"+balance);
 	}
 	//-----------------------------------------withdraw
 	public void withdraw(double a) throws InsufficientFundsException{

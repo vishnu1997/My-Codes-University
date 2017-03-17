@@ -1,2 +1,49 @@
-INFO	?	main	2017-03-14T16:54:39.140Z	org.javacs.Main#connectToNode	Connected to parent using socket on port 55282
-INFO	?	main	2017-03-14T16:54:40.692Z	org.javacs.JavaLanguageServer#doLint	Lint [/Users/vishnu/v1997/frameDemo1.java]
+INFO	?	main	2017-03-15T16:23:48.776Z	org.javacs.JavaLanguageServer#doLint	Lint [/Users/vishnu/v1997/menusDemo.java, /Users/vishnu/v1997/frameDemo1.java]
+INFO	?	main	2017-03-15T16:23:57.514Z	org.javacs.JavaLanguageServer#doLint	Lint [/Users/vishnu/v1997/menusDemo.java, /Users/vishnu/v1997/frameDemo1.java]
+INFO	?	main	2017-03-15T16:24:00.018Z	org.javacs.JavaLanguageServer#doLint	Lint [/Users/vishnu/v1997/menusDemo.java, /Users/vishnu/v1997/frameDemo1.java]
+INFO	?	main	2017-03-15T16:24:02.067Z	org.javacs.JavaLanguageServer#doLint	Lint [/Users/vishnu/v1997/menusDemo.java, /Users/vishnu/v1997/frameDemo1.java]
+INFO	?	main	2017-03-15T16:24:03.107Z	org.javacs.JavaLanguageServer#doLint	Lint [/Users/vishnu/v1997/menusDemo.java, /Users/vishnu/v1997/frameDemo1.java]
+INFO	?	main	2017-03-15T16:24:04.744Z	org.javacs.JavaLanguageServer#doLint	Lint [/Users/vishnu/v1997/menusDemo.java, /Users/vishnu/v1997/frameDemo1.java]
+SEVERE	?	main	2017-03-15T16:24:11.585Z	org.javacs.Main$4#onError	Can't find configuration file for /Users/vishnu/v1997/menusDemo.java
+org.javacs.NoJavaConfigException: Can't find configuration file for /Users/vishnu/v1997/menusDemo.java
+	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.javacs.JavaLanguageServer.findCompiler(JavaLanguageServer.java:479)
+	at org.javacs.JavaLanguageServer.autocomplete(JavaLanguageServer.java:1057)
+	at org.javacs.JavaLanguageServer$1.completion(JavaLanguageServer.java:108)
+	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint._doAccept(LanguageServerEndpoint.xtend:126)
+	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.doAccept(LanguageServerEndpoint.xtend:117)
+	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend:114)
+	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend)
+	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.handleMessage(LanguageEndpoint.xtend:67)
+	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.lambda$connect$4(LanguageEndpoint.xtend:61)
+	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:46)
+	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:44)
+	at io.typefox.lsapi.services.json.StreamMessageReader.handleMessage(StreamMessageReader.xtend:128)
+	at io.typefox.lsapi.services.json.StreamMessageReader.listen(StreamMessageReader.xtend:61)
+	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.connect(LanguageEndpoint.xtend:60)
+	at org.javacs.Main.run(Main.java:150)
+	at org.javacs.Main.main(Main.java:69)
+
+INFO	?	main	2017-03-15T16:24:14.675Z	org.javacs.JavaLanguageServer#doLint	Lint [/Users/vishnu/v1997/menusDemo.java, /Users/vishnu/v1997/frameDemo1.java]
+SEVERE	?	main	2017-03-15T16:24:17.461Z	org.javacs.Main$4#onError	Can't find configuration file for /Users/vishnu/v1997/menusDemo.java
+org.javacs.NoJavaConfigException: Can't find configuration file for /Users/vishnu/v1997/menusDemo.java
+	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.javacs.JavaLanguageServer.findCompiler(JavaLanguageServer.java:479)
+	at org.javacs.JavaLanguageServer.autocomplete(JavaLanguageServer.java:1057)
+	at org.javacs.JavaLanguageServer$1.completion(JavaLanguageServer.java:108)
+	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint._doAccept(LanguageServerEndpoint.xtend:126)
+	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.doAccept(LanguageServerEndpoint.xtend:117)
+	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend:114)
+	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend)
+	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.handleMessage(LanguageEndpoint.xtend:67)
+	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.lambda$connect$4(LanguageEndpoint.xtend:61)
+	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:46)
+	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:44)
+	at io.typefox.lsapi.services.json.StreamMessageReader.handleMessage(StreamMessageReader.xtend:128)
+	at io.typefox.lsapi.services.json.StreamMessageReader.listen(StreamMessageReader.xtend:61)
+	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.connect(LanguageEndpoint.xtend:60)
+	at org.javacs.Main.run(Main.java:150)
+	at org.javacs.Main.main(Main.java:69)
+
