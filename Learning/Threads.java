@@ -1,4 +1,4 @@
-import java.io.*;
+1import java.io.*;
 
 class Sync{
 

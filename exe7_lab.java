@@ -42,7 +42,7 @@ class Point{
 		return (int)(x+y);
 	}
 	public boolean equals(Point p){
-		if(p.y!=x){return true;}else{return false;}
+		if(p.y!=x&&p.x!=y){return true;}else{return false;}
 
 	}
 
@@ -55,6 +55,9 @@ class Point{
 		else if(d==d1){return 0;}
 		else{return -1;}
 	}
+
+	public String toString()
+ { return "("+x+","+y+")"; }
 
 }
 
@@ -72,9 +75,10 @@ public static void main(String ar[]){
 	
 	System.out.println("Enter the no. of elements");
 	int n = s.nextInt();
-	
+	// hash set initialization
 	HashSet<Point> pset = new HashSet<Point>(); 
 	for(int i = 0;i<n;i++){
+		System.out.println("enter point "+(i+1)+" : ");
 		System.out.println("Enter the x co-ordinate");
 		double x = s.nextDouble();
 		System.out.println("Emter the y co-ordinate");
@@ -82,29 +86,34 @@ public static void main(String ar[]){
 		Point p = new Point(x,y);
 		pset.add(p);
 	}
-	
-	ArrayList<Point> plist = new ArrayList<Point>(pset);
-	plist.sort(new compareit());
 
-	Iterator<Point> it1 = plist.iterator();
+	System.out.println("Points in hash set");
+  System.out.println(pset);
+
+	//Array list initialization
+	ArrayList<Point> plist = new ArrayList<Point>(pset);
+	
+  System.out.println("points in array list after sorting");
+	plist.sort(new compareit());
+	
+	System.out.println(plist);
+	ListIterator<Point> it1 = plist.listIterator();
 	while(it1.hasNext()){
 		Point p1 = (Point)it1.next();
 		double d = p1.find_distance(0,0);
-		System.out.println("the distance between the origin is"+d);
-
-	
+		System.out.println("the distance between the origin is"+d);	
 	}
-	Iterator<Point> it2 = plist.iterator();
+
+	ListIterator<Point> it2 = plist.listIterator();
 	while(it2.hasNext()){
 		Point p3 = (Point)it2.next();
 		int j = it2.nextIndex();	
-		Iterator<Point> it3 = plist.iterator(j);
+		ListIterator<Point> it3 = plist.listIterator(j);
 		while(it3.hasNext()){
 			Point p4 = (Point)it3.next();
-			double x = p3.find_distance(p4);
-			System.out.println("The distance between points is"+x);
-		}
-			
+			double r = p3.find_distance(p4);
+			System.out.println("The distance between points is"+r);
+		}		
 	}
 }
 }
