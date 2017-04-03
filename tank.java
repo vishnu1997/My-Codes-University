@@ -53,7 +53,7 @@ public class tank extends Applet implements ActionListener,Runnable{
 		
 	
 	synchronized public void reume(){
-        suspendflag = true;
+        suspendflag = false;
 		notifyAll();
 		
 	}
@@ -76,7 +76,7 @@ public class tank extends Applet implements ActionListener,Runnable{
 
 		}
 		if(o==Suspend){
-			suspendflag=false;
+			suspendflag=true;
 		}
 
 		
