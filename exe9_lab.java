@@ -70,7 +70,7 @@ class SRF extends Frame implements ActionListener{
 		c6.add("1998");
 
 		l8 = new Label("Address");
-		ta1 = new TextArea(3,10);
+		ta1 = new TextArea(2,10);
 		
 		l9 = new Label("Email-id");
 		t3 = new TextField(10);
@@ -86,7 +86,7 @@ class SRF extends Frame implements ActionListener{
 		li1.add("maggi");
 	
 		l12 = new Label("YOUR entries");
-		ta2 = new TextArea(6,20);
+		ta2 = new TextArea(6,10);
 				
 	
 		
@@ -135,6 +135,8 @@ class SRF extends Frame implements ActionListener{
 
 		add(b1);
 		b1.addActionListener(this);
+
+		t2.setEditable(false);
 		}
 
 
@@ -143,14 +145,26 @@ class SRF extends Frame implements ActionListener{
 	public void actionPerformed(ActionEvent ae){
 		
 		
-		ta2.append("register no is"+t1.getText()+"/n");
-		ta2.append("Name is"+t2.getText()+"/n");
+		ta2.append("register no is"+t1.getText()+"\n");
+		ta2.append("Name is"+t2.getText()+"\n");
 		if(cb1.getState()){
-			ta2.append("Gender is"+cb1.getLabel()+"/n");
+			ta2.append("Gender is"+cb1.getLabel()+"\n");
 		}else{
-			ta2.append("Gender is"+cb2.getLabel()+"/n");
+			ta2.append("Gender is"+cb2.getLabel()+"\n");
+		}
+		ta2.append("\nDegree enrolled is "+c1.getSelectedItem());
+		ta2.append("\nBranch is"+c2.getSelectedItem());
+
+		ta2.append(ta1.getText());
+		String[] nt = li1.getSelectedItems();
+		for(int j = 0;j<nt.length;j++){
+			ta2.append("\n    "+nt[j]);
 		}
 		
+		if(cb3.getState()){
+			ta2.append("\n hobbies are"+cb3.getLabel());
+		}
+		t2.setEditable(true);
 		
 		
 	
