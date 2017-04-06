@@ -137,6 +137,13 @@ class SRF extends Frame implements ActionListener{
 		b1.addActionListener(this);
 
 		t2.setEditable(false);
+		  addWindowListener(new WindowAdapter()
+		{ public void windowClosing(WindowEvent e)
+  		   { setVisible(false);
+		     //dispose();
+			 System.exit(0);
+		   }
+		});
 		}
 
 
