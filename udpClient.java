@@ -9,7 +9,9 @@ public class udpClient{
             byte buffer[] = new byte[20];
             DatagramPacket dp = new DatagramPacket(buffer,buffer.length);
             ds.receive(dp);
-            String  sh = new 
+            String  sh = new String(dp.getData());
+            System.out.println("data is"+sh);
+            ds.close();
         }catch(Exception e){
             System.out.println(e);}
     }
