@@ -136,7 +136,7 @@ class SRF extends Frame implements ActionListener{
 		add(b1);
 		b1.addActionListener(this);
 
-		t2.setEditable(false);
+		//t2.setEditable(false);
 		  addWindowListener(new WindowAdapter()
 		{ public void windowClosing(WindowEvent e)
   		   { setVisible(false);
@@ -159,7 +159,7 @@ class SRF extends Frame implements ActionListener{
 		}else{
 			ta2.append("Gender is"+cb2.getLabel()+"\n");
 		}
-		ta2.append("\nDegree enrolled is "+c1.getSelectedItem());
+		/*ta2.append("\nDegree enrolled is "+c1.getSelectedItem());
 		ta2.append("\nBranch is"+c2.getSelectedItem());
 
 		ta2.append(ta1.getText());
@@ -170,8 +170,8 @@ class SRF extends Frame implements ActionListener{
 		
 		if(cb3.getState()){
 			ta2.append("\n hobbies are"+cb3.getLabel());
-		}
-		t2.setEditable(true);
+		}*/
+		//t2.setEditable(true);
 		
 		
 	
