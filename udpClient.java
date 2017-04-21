@@ -11,7 +11,7 @@ public class udpClient{
             ds.receive(dp);
             String  sh = new String(dp.getData());
             System.out.println("data is"+sh);
-            ds.close();
+            ds.close(); 
         }catch(Exception e){
             System.out.println(e);}
     }

@@ -6,7 +6,7 @@ public class tcpServerDemo {
         try{
             int port = 4444;
             ServerSocket ss = new ServerSocket(port);
-            InetAddress IP=InetAddress.getLocalHost();
+           // InetAddress IP=InetAddress.getLocalHost();
             //System.out.println("IP of my system is := "+InetAddress.getLocalHost());
             Socket s = ss.accept();
             /*InetAddress IP=InetAddress.getLocalHost();
