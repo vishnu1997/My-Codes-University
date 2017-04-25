@@ -12,7 +12,7 @@ class SRF extends Frame implements ActionListener{
 	Choice c1,c2,c3,c4,c5,c6;
 	CheckboxGroup cbg = new CheckboxGroup();
 	Checkbox cb1,cb2,cb3,cb4;
-	Button b1,b2,b3,b4;
+	Button b1,b2,b3,b4,b5,b6;
 		
 	TextArea ta1,ta2;
 	List li1;
@@ -162,6 +162,14 @@ class SRF extends Frame implements ActionListener{
 		  b4 = new Button("last");
 		  add(b4);
 		  b4.addActionListener(this);
+
+		  b5 = new Button("Update");
+		  add(b5);
+		  b5.addActionListener(this);
+		  
+		  b6 = new Button("ALL DISPLAY");
+		  add(b6);
+		  b6.addActionListener(this);
 		}
 
 	void dbConn(){
@@ -169,8 +177,8 @@ class SRF extends Frame implements ActionListener{
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection("jdbc:mysql://localhost/dbtrial1?autoReconnect=true&useSSL=false","root","vishnu");
 			st = conn.createStatement();
-			tr = conn.createStatement();
-			//st.execute("create table srf (regno int,name char(20),gender char(10))");
+			tr = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+			//st.execute("create table srf (regno int,name char(20),gender char(10),PRIMARY KEY(regno))");
 			ps = conn.prepareStatement("insert into srf values (?,?,?);");
 			
 		}catch(Exception e){
@@ -248,11 +256,46 @@ class SRF extends Frame implements ActionListener{
 				System.out.println("last "+e);
 			}
 		}
+		if(ae.getSource()==b5){
+			//t5.setText("");
+			try{
+				rs2 = tr.executeQuery("select * from srf where regno="+Integer.parseInt(t1.getText()));
+				if(rs2.next()){
+					ta2.append("Reg : "+rs2.getInt(1)+"\n"+t2.getText());
+					ta2.append("Name : "+rs2.getString(2)+"\n");
+					ta2.append("Gender : "+rs2.getString(3)+"\n");
+					rs2.updateRow(1,1223);
+					/*rs2.updateInt(1,1111);
+					rs2.updateString(2,t2.getText());
+					if(cb1.getState()){
+						rs2.updateString(3,cb1.getLabel());
+					}else{
+						rs2.updateString(3,cb2.getLabel());
+					}*/
+				}
+			}catch(Exception e){
+				System.out.println(" error is" + e);
+			}
+				
+			}
+		if(ae.getSource()==b6){
+			try{
+			rs1 = tr.executeQuery("select * from srf");
+			while(rs1.next()){
+				ta2.append("Reg no is "+rs1.getInt(1)+"\n");
+				ta2.append("Name is "+rs1.getString(2)+"\n");
+				ta2.append("Gender is "+rs1.getString(3)+"\n");
+			}
+			}catch(Exception e){
+				System.out.println("  yoo"+e);
+			}
+		}
+		}
 	}
-}
 
 
-public class srfDb {
+
+public class exe9_lab {
 	
 	public static void main(String ar[]){
 		SRF d = new SRF();
