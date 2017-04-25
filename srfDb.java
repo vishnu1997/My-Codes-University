@@ -12,16 +12,18 @@ class SRF extends Frame implements ActionListener{
 	Choice c1,c2,c3,c4,c5,c6;
 	CheckboxGroup cbg = new CheckboxGroup();
 	Checkbox cb1,cb2,cb3,cb4;
-	Button b1,b2,b3,b4,b5,b6;
+	Button b1,b2,b3,b4,b5,b6,b7,b8;
 		
 	TextArea ta1,ta2;
 	List li1;
 	
 	String s;
 	
+	boolean flag;
+	
 	Connection conn;
 	Statement st,tr;
-	ResultSet rs1,rs2;
+	ResultSet rs1,rs2,rs3;
 	PreparedStatement ps;
 	
 	SRF(){
@@ -170,6 +172,14 @@ class SRF extends Frame implements ActionListener{
 		  b6 = new Button("ALL DISPLAY");
 		  add(b6);
 		  b6.addActionListener(this);
+		  
+		  b7 = new Button("next");
+		  add(b7);
+		  b7.addActionListener(this);
+		  
+		  b8 = new Button("next");
+		  add(b8);
+		  b8.addActionListener(this);
 		}
 
 	void dbConn(){
@@ -180,7 +190,8 @@ class SRF extends Frame implements ActionListener{
 			tr = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
 			//st.execute("create table srf (regno int,name char(20),gender char(10),PRIMARY KEY(regno))");
 			ps = conn.prepareStatement("insert into srf values (?,?,?);");
-			
+			rs3 = tr.executeQuery("Select * from srf;");
+			flag = true;
 		}catch(Exception e){
 			System.out.println(e);
 		}
@@ -188,6 +199,13 @@ class SRF extends Frame implements ActionListener{
 	
 
 	public void actionPerformed(ActionEvent ae){
+		if(flag){
+			try{
+			flag=false;
+			rs3.first();}catch(Exception e){
+				System.out.println(e);
+			}
+		}
 		ta2.setText(null);
 		if(ae.getSource()==b1){
 			try{
@@ -261,17 +279,18 @@ class SRF extends Frame implements ActionListener{
 			try{
 				rs2 = tr.executeQuery("select * from srf where regno="+Integer.parseInt(t1.getText()));
 				if(rs2.next()){
-					ta2.append("Reg : "+rs2.getInt(1)+"\n"+t2.getText());
-					ta2.append("Name : "+rs2.getString(2)+"\n");
-					ta2.append("Gender : "+rs2.getString(3)+"\n");
-					rs2.updateRow(1,1223);
-					/*rs2.updateInt(1,1111);
+					//  ta2.append("Reg : "+rs2.getInt(1)+"\n"+t2.getText());
+					//ta2.append("Name : "+rs2.getString(2)+"\n");
+					//ta2.append("Gender : "+rs2.getString(3)+"\n");
+				
+					
+					//rs2.updateInt(1,11321);
 					rs2.updateString(2,t2.getText());
 					if(cb1.getState()){
 						rs2.updateString(3,cb1.getLabel());
 					}else{
 						rs2.updateString(3,cb2.getLabel());
-					}*/
+					}rs2.updateRow();
 				}
 			}catch(Exception e){
 				System.out.println(" error is" + e);
@@ -286,6 +305,33 @@ class SRF extends Frame implements ActionListener{
 				ta2.append("Name is "+rs1.getString(2)+"\n");
 				ta2.append("Gender is "+rs1.getString(3)+"\n");
 			}
+			}catch(Exception e){
+				System.out.println("  yoo"+e);
+			}
+		}
+		if(ae.getSource()==b7){
+			try{
+			//rs = tr.executeQuery("select * from srf");
+			//rs1=rs.first();
+			if(rs3.next()){
+					ta2.append("Reg  "+rs3.getInt(1)+"\n");
+					ta2.append("Nam "+rs3.getString(2)+"\n");
+					ta2.append("Genders: "+rs3.getString(3)+"\n");
+				}
+			}catch(Exception e){
+				System.out.println("  yoo"+e);
+			}
+		}
+		
+		if(ae.getSource()==b8){
+			try{
+			//rs = tr.executeQuery("select * from srf");
+			//rs1=rs.first();
+			if(rs3.previous()){
+					ta2.append("Reg  "+rs3.getInt(1)+"\n");
+					ta2.append("Nam "+rs3.getString(2)+"\n");
+					ta2.append("Genders: "+rs3.getString(3)+"\n");
+				}
 			}catch(Exception e){
 				System.out.println("  yoo"+e);
 			}
