@@ -6,7 +6,7 @@ public class fcopy{
         try{
             String s = "fly away with me";
             int c;
-            FileReader fr = new FileReader("filedemo.txt");
+            FileReader fr = new FileReader("filedemo2.txt");
             while((c = fr.read()) != -1){ System.out.print((char) c);
             s+=Character.toString((char)c);}
             System.out.println(" " +s);

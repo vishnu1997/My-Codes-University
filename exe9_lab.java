@@ -159,7 +159,8 @@ class SRF extends Frame implements ActionListener{
 		}else{
 			ta2.append("Gender is"+cb2.getLabel()+"\n");
 		}
-		/*ta2.append("\nDegree enrolled is "+c1.getSelectedItem());
+
+		ta2.append("\nDegree enrolled is "+c1.getSelectedItem());
 		ta2.append("\nBranch is"+c2.getSelectedItem());
 
 		ta2.append(ta1.getText());
@@ -170,7 +171,8 @@ class SRF extends Frame implements ActionListener{
 		
 		if(cb3.getState()){
 			ta2.append("\n hobbies are"+cb3.getLabel());
-		}*/
+		}
+		
 		//t2.setEditable(true);
 		
 		
