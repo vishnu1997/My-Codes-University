@@ -4,8 +4,7 @@ package shape3d;
 import java.io.*;
 import java.util.*;
 
-//------------------------------interface threed
-interface threed{
+//------------------------------interface threedinterface threed{
 
 	//--------------------------volume
 	double volume();

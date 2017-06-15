@@ -37,6 +37,7 @@ public class appletDemo extends Applet implements ActionListener,TextListener,It
             setForeground(Color.cyan);
         }
         g.fillRoundRect(300, 300, 70, 70, 10, 10);
+       // g.draw3DRect(100,100,200,200, true);
     }
 
 
