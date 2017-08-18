@@ -1,3 +1,0 @@
-INFO	?	main	2017-03-21T02:41:53.650Z	org.javacs.Main#connectToNode	Connected to parent using socket on port 55282
-INFO	?	main	2017-03-21T02:41:55.267Z	org.javacs.JavaLanguageServer#doLint	Lint [/Users/vishnu/v1997/Point1.java]
-INFO	?	main	2017-03-21T02:42:48.406Z	org.javacs.Main#run	Connection closed
