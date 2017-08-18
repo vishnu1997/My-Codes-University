@@ -55,7 +55,7 @@ int main(){
 		
         rr[i].status=0;	       //status flag to check completed or not
         rr[i].cmp = 0;         //cmp for storing completed time
-        rr[i].fl = 1;          //fl for checking if its the current process
+        rr[i].fl = 1;          //fl for checking if it's the current process
         rr[i].en = 1;          //for checking if it is present in the queue or not
     }
     
@@ -73,7 +73,7 @@ int main(){
         cout<<" d value "<<d<<"\n";
         if(d!=-1){
             rr[d].fl=0;
-            if(rr[d].st<=tq){       //check whether it's completion time is less the time quantum
+            if(rr[d].st<=tq){ //check whether it's completion time < time quantum
                 cur +=rr[d].st;
                 rr[d].status = 1;
                 rr[d].cmp = cur;
