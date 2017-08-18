@@ -41,7 +41,7 @@ int main(){
 		pid = dispatcher(cur_time,n);
 		list[pid].status = 1;
 		cur_time +=list[pid].st;
-		list[pid].cmp = cur_time
+		list[pid].cmp = cur_time;
 		i++;
 	}
 

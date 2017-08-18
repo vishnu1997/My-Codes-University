@@ -20,8 +20,6 @@ int dispacher(int c,int n){
 			}
 		}
 	}
-
-
 	return index;	
 }
 

@@ -3,7 +3,7 @@
 #include<unistd.h>
 
 struct prio{
-	int at,st,ft,pr,status;
+	int at,st,cmp,pr,status;
 }list[10];
 
 int dispatcher(int c,int n){
@@ -40,13 +40,13 @@ int main(){
 	cur_time = 0;
 	while(i<n){
 		pid = dispatcher(cur_time,n);
-		list[pid].ft = cur_time + list[pid].st;
 		list[pid].status = 1;
 		cur_time +=list[pid].st;
+		list[pid].cmp = cur_time;
 		i++;
 	}
 	for(i = 0;i<n;i++){
 		printf("enter the at %d",i);
-		printf("enter the FT: %d",list[i].ft);
+		printf("enter the FT: %d",list[i].cmp);
 	}
 }
