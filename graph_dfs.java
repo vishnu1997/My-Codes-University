@@ -1,10 +1,10 @@
 import java.io.*;
 import java.util.*;
 
-public class graph_bfs{
+public class graph_dfs{
     int v;
     LinkedList<Integer> edges[];
-    graph_bfs(int j){
+    graph_dfs(int j){
         v = j;
         edges = new LinkedList[v];
         for(int i=0;i<v;i++){
@@ -15,7 +15,7 @@ public class graph_bfs{
         edges[i].add(j);
     }
 
-    void bfs(int s){
+    void dfs(int s){
         boolean b[] = new boolean[v];
         for(int i=0;i<v;i++){
             b[i] = false;
@@ -26,7 +26,7 @@ public class graph_bfs{
         //System.out.println(s);
         while(queue.size()!=0){
             int k,p;
-            p=queue.poll();
+            p=queue.removeLast();
             System.out.println(p);
             
             Iterator<Integer> it = edges[p].listIterator();
@@ -41,15 +41,18 @@ public class graph_bfs{
     }
 
     public static void main(String ar[]){
-        graph_bfs g = new graph_bfs(8);
-        g.addEdge(0, 1);
+        graph_dfs g = new graph_dfs(6);
+        g.addEdge(1, 0);
         g.addEdge(0, 2);
-        g.addEdge(1, 3);
-        g.addEdge(1, 4);
+        g.addEdge(0, 3);
+        g.addEdge(0, 4);
+        
+        
         g.addEdge(2, 3);
-        g.addEdge(3, 5);
-        g.addEdge(5, 7);
-        g.addEdge(2, 6);
-        g.bfs(0);
+        g.addEdge(2, 5);
+        g.addEdge(5, 3);
+        g.addEdge(2, 4);
+        
+        g.dfs(0);
     }
 }

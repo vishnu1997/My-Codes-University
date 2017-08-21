@@ -70,7 +70,6 @@ int main(){
     while(empty()){         //loop till queue is empty
         d = dequeue(a);     //take the first elemnt from the queue
         rr[d].en = 1;       
-        cout<<" d value "<<d<<"\n";
         if(d!=-1){
             rr[d].fl=0;
             if(rr[d].st<=tq){ //check whether it's completion time < time quantum
@@ -96,9 +95,8 @@ int main(){
                                         in the q if its not completed*/
                 enqueue(a,d,10);
                 rr[d].en = 0;
-                cout<<d<<"ssss\n";
             }
-            
+        
             if(rr[d].status!=1){
             rr[d].fl=1;}
         }

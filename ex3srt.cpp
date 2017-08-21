@@ -7,9 +7,9 @@ struct list{
 
 int main(){
     int tq=1;
-    int n, i, x, d;
+    int n, i, d;
     int k=0;
-    int a[10];
+    //int a[10];
     int cur=0;
 	printf("enter Number");
 	scanf("%d",&n);
