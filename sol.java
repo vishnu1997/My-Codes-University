@@ -157,8 +157,8 @@ public class sol{
         }
            */        
         int i,j;
-        i=0;//i = in.nextInt();
-        j=0;//j = in.nextInt();                   //get i,j values = where fire starts
+        i=6;//i = in.nextInt();
+        j=6;//j = in.nextInt();                   //get i,j values = where fire starts
         i++;j++;
         int o,p;                            // o p  for i,j values copy
         o = i;
