@@ -12,7 +12,7 @@ int chk(int dm[10][10],int need[10][10],int allr[10],int p,int np,int nr);
 void pri(int ma[10][10],int np,int nr){
     for(int i=0;i<np;i++){
         for(int j=0;j<nr;j++){
-            printf("process %d:res :%d:::",i,j);
+            printf("process --------%d:need :%d:::",i,j);
             printf("%d\n",ma[i][j]);
         }}
 }
@@ -53,7 +53,7 @@ int main(){
             printf("neeedd %d.....claim[:%d,,,,,,alloc[][]:%d----\n",need[i][j],claim[i][j],alloc[i][j]);
         }
     }
-    //pri(need,np,nr);
+    pri(need,np,nr);
     for(int i=0;i<np;i++){
         for(int j=0;j<nr;j++){
             printf("process %d:res :%d:::",i,j);

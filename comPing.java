@@ -5,7 +5,7 @@ public class comPing{
     public static void main(String ar[]){
         try{
             Runtime r = Runtime.getRuntime();
-            Process p = r.exec("ping www.fb.com");
+            Process p = r.exec("ping www.sastra.edu");
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String result;
             while((result = br.readLine())!=null){
