@@ -26,12 +26,10 @@ node* newnode(int d){
 }
 //////////////////////////////////
 void insertbeg(node *beg,int r){
-    node* temp;
-   // cout<<endl<<"hi"<<r;
-    if(head[r]==NULL){
+      if(head[r]==NULL){
         head[r]=beg;
     }
-    else{temp=head[r];
+    else{
         beg->link=head[r];
         head[r]=beg;
     }
