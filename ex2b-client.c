@@ -11,7 +11,7 @@ struct mes{
 
 int main(){
 	int msqid;
-	int i;			
+	int i;	
 	msqid = msgget(421,0666);//421 is the key value
 	//get any 3 messages from the message queueby specifing the type
 	for(i=0;i<3;i++){	

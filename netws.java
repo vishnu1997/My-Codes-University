@@ -9,8 +9,9 @@ public class netws{
             
             
             Scanner in = new Scanner(System.in);
+            System.out.println("enter the string");
             String str = in.nextLine();
-            System.out.println("enter the key<9");
+            System.out.println("enter the key < 9");
             int key = in.nextInt();
            // System.out.println(str);
             String str1= "";
