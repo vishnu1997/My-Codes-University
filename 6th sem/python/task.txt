@@ -1,0 +1,11 @@
+task1: create a class employee with employee id,email,grade,adress,phone and setters and getters
+        employer -orgid,orgname,
+task2:formulate the following functions - lambda,factory , generator,__init__,provider,getattribute,set attribute
+                                    function with and without return
+task3:write a recursive function to find sum of n numbers and list out odd and even number using
+        odd,even numbers
+task4:create a module called as 'sum' use this sum module in another python program to add the elemnets of given 
+        matrix
+task5:create a window using tkinter module and use both from and import keywords in your program
+    and display a message "hi  welcome"
+task6: implement legb rule

@@ -1,7 +1,7 @@
 v = 0
 d={}
 def fun(p,q,r):
-    s = 0;
+    s = 0
     if (q,r) in d:
         return d[q,r]
     if r<=0:
