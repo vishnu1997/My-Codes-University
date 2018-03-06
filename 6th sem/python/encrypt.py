@@ -1,6 +1,6 @@
 import random
 
-d={"a":"g",
+d={ "a":"g",
     "b":"m",
     "c":"a",
     "d":"r",
