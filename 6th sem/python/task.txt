@@ -9,3 +9,9 @@ task4:create a module called as 'sum' use this sum module in another python prog
 task5:create a window using tkinter module and use both from and import keywords in your program
     and display a message "hi  welcome"
 task6: implement legb rule
+
+task7:creating a form to get the details of interviewing candidate of your company and
+      checking the qualifications and credentials of the candidate and finally print 3 reports
+      1-> resume template
+      2-> result of the interviewing
+      3-> sending email to the selected candidates for their joining time
