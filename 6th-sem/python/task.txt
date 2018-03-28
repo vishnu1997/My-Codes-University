@@ -1,0 +1,29 @@
+task1: create a class employee with employee id,email,grade,adress,phone and setters and getters
+        employer -orgid,orgname,
+task2:formulate the following functions - lambda,factory , generator,__init__,provider,getattribute,set attribute
+                                    function with and without return
+task3:write a recursive function to find sum of n numbers and list out odd and even number using
+        odd,even numbers
+task4:create a module called as 'sum' use this sum module in another python program to add the elemnets of given 
+        matrix
+task5:create a window using tkinter module and use both from and import keywords in your program
+    and display a message "hi  welcome"
+task6: implement legb rule
+
+task7:creating a form to get the details of interviewing candidate of your company and
+      checking the qualifications and credentials of the candidate and finally print 3 reports
+      1-> resume template
+      2-> result of the interviewing
+      3-> sending email to the selected candidates for their joining time
+task8: write a py using two classes , class 1 - flipcart, class 2 - offers.create inheritance as base
+        and child class. Get attribute of flipcart 1. Items 2. Quantity 3.Original price
+        The base class contains methods call get attribute, delete attribute. The sub class contains
+        Trans.ID , discount rate. The offers contains calculate the discount as follows
+        1. totalPrice>10000 => 50 offers
+        2.electronics items purchased more than twice => 30%
+        3 get 1 plus 1 over dress materials
+        calculate the discount as per the tid , and item descripttion and the number of items purchased.
+        calculate the total offer and display it in neat formulate
+        get values from the user using tkinter and display it in a seperate formulate
+        ->use cons, destructore, self inst, del, main, set,get attributes
+        
