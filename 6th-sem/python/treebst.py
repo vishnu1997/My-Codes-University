@@ -1,6 +1,7 @@
 l=[]
 l1=[]
 l2=[]
+d={}
 class node:
   def __init__(self,da):
     self.data = da
@@ -80,20 +81,61 @@ class bst:
     r.right = self.full(r.right,m,h+1)
     return r
 
+  def top1(self,r,h):
+    if(r==None):
+      return
+    if h not in d.keys():
+      if int(h)>0:
+      l2.append(str(r.data))
+      d[h]=r.data
+    
+    self.top1(r.left,str(int(h)-1))
+    
+    self.top1(r.right,str(int(h)+1))
+    return  
+
+  def top2(self,r,h):
+    if(r==None):
+      return
+    if h not in d.keys():
+      l2.append(str(r.data))
+      d[h]=r.data
+    
+    self.top2(r.right,str(int(h)+1))
+    self.top2(r.left,str(int(h)-1))
+    return 
+
+
+
+  def topView(self):
+    d[str(0)]=self.root.data
+    self.top1(self.root.left,str(-1))
+    l2.append(str(self.root.data))
+    self.top2(self.root.right,str(1))
+
+
+
+
 tree = bst()
-er = [5,3,8,1,4,7,6]
+er=[6,3,8,1,4,5,10]
 for i in range(len(er)):
   tree.insert(er[i])
 
 tree.show1()
-
+li=[]
 print(l1)
-mm = tree.maxheight()
-tree.create(mm)
-del l1
-l1 = []
-tree.show1()
+tree.topView()
+for i in d.keys():
+  li.append(int(i))
+li.sort()
+for j in range(len(li)):
+  print(d[str(li[j])])
+# mm = tree.maxheight()
+# tree.create(mm)
+# del l1
+# l1 = []
+# tree.show1()
 
-print(l1)
+# print(l1)
 
 #print(l2)

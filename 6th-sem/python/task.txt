@@ -9,7 +9,7 @@ task4:create a module called as 'sum' use this sum module in another python prog
 task5:create a window using tkinter module and use both from and import keywords in your program
     and display a message "hi  welcome"
 task6: implement legb rule
-
+//--------------------------------------
 task7:creating a form to get the details of interviewing candidate of your company and
       checking the qualifications and credentials of the candidate and finally print 3 reports
       1-> resume template
@@ -26,4 +26,10 @@ task8: write a py using two classes , class 1 - flipcart, class 2 - offers.creat
         calculate the total offer and display it in neat formulate
         get values from the user using tkinter and display it in a seperate formulate
         ->use cons, destructore, self inst, del, main, set,get attributes
-        
+//-------------------------------------------------
+task9: create a website for your company with 3 different users - admin,power user,guest.
+        create a class user as a base class which consists of user name and password,
+        create a sub class admin,power user,guest which consists of following methods respectively.
+        admin- create_user()
+        power user - create_file()
+        guest - read_only_file()
