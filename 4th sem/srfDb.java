@@ -341,14 +341,12 @@ class SRF extends Frame implements ActionListener{
 
 
 
-public class exe9_lab {
+public class srfDb {
 	
 	public static void main(String ar[]){
 		SRF d = new SRF();
 		d.setVisible(true);
 		d.setSize(600,600);
-	
-	
 	}
  
 }

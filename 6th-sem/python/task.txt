@@ -33,3 +33,9 @@ task9: create a website for your company with 3 different users - admin,power us
         admin- create_user()
         power user - create_file()
         guest - read_only_file()
+//------------------------------------------------
+task10: create a text file one.txt and read a file content of one.txt and save into  		two.txt.
+2.while reading a file check the file and if the file is not available it should raise IO error if the file is available it should automatically copy into end.txt
+3. Get n values from the user and save this values under the list, if the value is more than hundred then raise exception and stop your process using assertion
+4.Write a python program to get electricity meter values. If the cumulative current reading is >100 and below 200. units *1.5 =. between 200 to 500 = 5 rupees per unit. more than 500 then 10 rupees per unit. raise exception using try catch and finally
+5.Get 2 dim list . 1st column contains -> item ID ,2nd column contains -item type. Item types are 0 or 1 or 2. 0 means stationary items,1 means domestic items, 2 means luxury items. Calculate the GST value according to the type of the item. If type =0 -> 5%. for type 2 -> 10%. type 3->50%. calculate the each customer tax. Apply built in exceptions

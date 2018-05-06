@@ -33,6 +33,3 @@ stat.execute("INSERT INTO FIRSTTABLE VALUES  (10,'TEN'),(20,'TWENTY'),(30,'THIRT
       }
    }
 }
-
-
-
