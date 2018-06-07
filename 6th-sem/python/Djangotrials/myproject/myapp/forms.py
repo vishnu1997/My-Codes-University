@@ -8,3 +8,7 @@ class myprojectForm(forms.Form):
     email = forms.CharField(label='email',max_length=100)
     location = forms.CharField(label='location',max_length=100)
     img_url = forms.CharField(label='img_url',max_length=255)
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label='User Name', max_length=64)
+    password = forms.CharField(widget=forms.PasswordInput())
