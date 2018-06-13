@@ -1,9 +1,12 @@
 {% load staticfiles %}
+{% load app_filter %} 
 
 <!DOCTYPE html>
 <html >
 <head>
     <title>Resume Form</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" media="screen">
 </head>
 <body>
         <nav class="navbar navbar-default navbar-static-top text-center" role="navigation">
@@ -21,4 +24,20 @@
           {{form.as_p}}
         <input type="submit" value="Submit" />
     </form>
+    <br>
+    <hr>
+    {% if request.user|has_group:"maggi" %}
+    <p>User belongs to Maggi
+    {% else %}
+    <p>Ask for permissions for maggi</p> 
+    {% endif %}
+    <hr>
+    <br>
+    <hr>
+    {% if request.user|has_group:"yipee" %}
+    <p>User belongs to Yipeee
+    {% else %}
+    <p>Ask for permissions for yipee</p>
+    {% endif %}
+    <hr>
 </body>

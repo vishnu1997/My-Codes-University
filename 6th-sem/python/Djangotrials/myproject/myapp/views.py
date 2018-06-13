@@ -1,15 +1,22 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from myapp.models import myproject
-from myapp.forms import myprojectForm
+from myapp.forms import myprojectForm,CustomUserCreationForm
+from django.contrib import messages
 from .forms import  LoginForm
 
 # Create your views here.
 def index(request):
     #myproject1 = myproject.objects.all()
-    form = myprojectForm()
-    return render(request, 'index.html', {'form':form})
+    if request.user.is_superuser:
+        return HttpResponseRedirect('/admin')
+    elif request.user.is_authenticated:
+        form = myprojectForm()
+        return render(request, 'index.html', {'form':form})
+    else:
+        return HttpResponseRedirect('/login')
 
 def post_resume(request):
     form = myprojectForm(request.POST)
@@ -28,6 +35,25 @@ def post_resume(request):
 def show(request):
     myproject1 = myproject.objects.all()
     return render(request , 'show.html',{'myprojecte':myproject1})
+
+def newuser(request):
+    if request.method == 'POST':
+        f = CustomUserCreationForm(request.POST)
+        if f.is_valid():
+            f.save()
+            messages.success(request, 'Account created successfully')
+            return HttpResponseRedirect('/superuser')
+
+    else:
+        f = CustomUserCreationForm()
+
+    return render(request, 'newuser.html', {'form': f})
+def superu(request):
+    return render(request ,'superu.html',{})
+
+def gandp(request):
+    pass
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -56,4 +82,4 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/login')
