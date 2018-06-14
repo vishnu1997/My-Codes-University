@@ -18,7 +18,7 @@
                     <a class="navbar-text navbar-right" href="{% url 'Login' %}">Login</a>
                 {% endif %}
               </nav>
-
+    {% if request.user|has_group:"HR" %}
     <form enctype="multipart/form-data" action="post_url/" method="post" >
             {% csrf_token %}
           {{form.as_p}}
@@ -26,18 +26,24 @@
     </form>
     <br>
     <hr>
-    {% if request.user|has_group:"maggi" %}
+    
     <p>User belongs to Maggi
     {% else %}
-    <p>Ask for permissions for maggi</p> 
+    <p>Ask for permissions for adding new persons i.e into group HR</p>
+    <a href="{% url 'reqhr' usr=user.username %}" class="btn btn-default">Request</a> 
     {% endif %}
     <hr>
     <br>
     <hr>
-    {% if request.user|has_group:"yipee" %}
-    <p>User belongs to Yipeee
+    {% if request.user|has_group:"accountant" %}
+    <p>User belongs to accountant</p>
+    <p>An accountant is a practitioner of accounting or accountancy, which is the 
+        measurement, disclosure or provision of assurance about financial information
+         that helps managers, investors, tax authorities and others make decisions
+          about allocating resource(s).</p>
     {% else %}
-    <p>Ask for permissions for yipee</p>
+    <p>Ask for permissions for accountant</p>
+    <a href="{% url 'reqacc' usr=user.username %}" class="btn btn-default">Request</a>
     {% endif %}
     <hr>
 </body>

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth import authenticate, login, logout
-from myapp.models import myproject
+from myapp.models import myproject,groupreq
 from myapp.forms import myprojectForm,CustomUserCreationForm
 from django.contrib import messages
 from .forms import  LoginForm
@@ -83,3 +83,20 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/login')
+
+ 
+def reqhr(request,usr):
+    tr = groupreq(
+        name = usr,
+        groupReq = "HR"
+    )
+    tr.save()
+    return render(request ,'requested.html',{})
+
+def reqacc(request,usr):
+    tr = groupreq(
+        name = usr,
+        groupReq = "accountant"
+    )
+    tr.save()
+    return render(request ,'requested.html',{})

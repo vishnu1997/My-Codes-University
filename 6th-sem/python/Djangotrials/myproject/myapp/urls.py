@@ -10,4 +10,6 @@ urlpatterns = [
     url(r'^superuser/$', views.superu, name = 'superuser'),
     url(r'^newuser/$', views.newuser, name='newuser'),
     url(r'^gandp/$', views.gandp, name='gandp'),
+    url(r'^reqhr/(?P<usr>\w+)/$', views.reqhr, name='reqhr'),
+    url(r'^reqacc/(?P<usr>\w+)/$', views.reqacc, name='reqacc'),
 ]
