@@ -1,11 +1,10 @@
 from django.shortcuts import render
-from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponseRedirect,HttpResponse
+from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
-from myapp.models import myproject,groupreq
-from myapp.forms import myprojectForm,CustomUserCreationForm
 from django.contrib import messages
-from .forms import  LoginForm
+from myapp.forms import myprojectForm,CustomUserCreationForm
+from myapp.models import myproject,groupreq
+from myapp.forms import  LoginForm
 
 # Create your views here.
 def index(request):
@@ -52,7 +51,7 @@ def superu(request):
     return render(request ,'superu.html',{})
 
 def gandp(request):
-    pass
+    return render(request,'superu.html',{})
 
 
 def login_view(request):
