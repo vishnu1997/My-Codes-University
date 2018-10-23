@@ -41,6 +41,7 @@ class Point{
 	public int HashCode(){
 		return (int)(x+y);
 	}
+	
 	public boolean equals(Point p){
 		if(p.y!=x&&p.x!=y){return true;}else{return false;}
 

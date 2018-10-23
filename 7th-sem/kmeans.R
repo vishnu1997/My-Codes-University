@@ -1,0 +1,8 @@
+library(ggplot2)
+data("iris")
+head(iris,10)
+ggplot(iris,aes(Petal.Length,Petal.Width,color = Species))+geom_point()
+irisCluster = kmeans(iris[,3:4],3,nstart=10)
+head(irisCluster)
+re = table(irisCluster$cluster,iris$Species)
+ggplot(iris,aes(Petal.Length,Petal.Width,color = irisCluster$cluster))+geom_point()

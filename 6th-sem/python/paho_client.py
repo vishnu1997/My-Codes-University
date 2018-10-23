@@ -28,9 +28,9 @@ topic = 'test'
  
 # Connect
 #mqttc.username_pw_set(user, password)
-mqttc.username_pw_set('ijgkqtth', '5VkJJ8qL9jPk')
+mqttc.username_pw_set('', '')
 #mqttc.connect(server, port)
-mqttc.connect('m14.cloudmqtt.com', 12694)
+mqttc.connect('', )
  
 # Start subscribe, with QoS level 0
 mqttc.subscribe(topic, 0)

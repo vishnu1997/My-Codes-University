@@ -1,0 +1,76 @@
+#Compare the performance of machine learning algorithms 
+
+# load libraries
+library(mlbench)
+library(caret)
+
+# load the dataset
+data(PimaIndiansDiabetes)
+
+# prepare training scheme
+control <- trainControl(method="repeatedcv", number=10, repeats=3)
+# CART
+set.seed(7)
+fit.cart <- train(diabetes~., data=PimaIndiansDiabetes, method="rpart", trControl=control)
+set.seed(7)
+fit.lda <- train(diabetes~., data=PimaIndiansDiabetes, method="lda", trControl=control)
+# SVM
+set.seed(7)
+fit.svm <- train(diabetes~., data=PimaIndiansDiabetes, method="svmRadial", trControl=control)
+#KNN
+set.seed(7)
+fit.knn <- train(diabetes~., data=PimaIndiansDiabetes, method="knn", trControl=control)
+#random forest
+set.seed(7)
+fit.rf <- train(diabetes~., data=PimaIndiansDiabetes, method="rf", trControl=control)
+
+pre.cart=predict(fit.cart)
+pre.lda=predict(fit.lda)
+pre.svm=predict(fit.svm)
+pre.knn=predict(fit.knn)
+pre.rf=predict(fit.rf)
+
+a1=pre.cart
+a2=pre.rf
+a3=pre.knn
+a4=pre.svm
+a5=pre.lda
+a=cbind(as.matrix(a1),
+    as.matrix(a2),
+    as.matrix(a3),
+    as.matrix(a4),
+    as.matrix(a5)
+     )
+    
+head(a,4)
+a= as.matrix(a,ncol=5)
+head(a)
+dim(a)
+nrow(a)
+new_cl=matrix("neg", nrow=nrow(a),ncol=1)
+for(i in 1:nrow(a))
+{
+  asdf=which(a[i,]=="pos")
+  asdf=as.matrix(asdf,ncol=1)
+  if(nrow(asdf)>(ncol(a)/2))
+  {
+    new_cl[i,1]="pos"
+  }
+  
+}
+head(new_cl)
+def=(fit.svm$trainingData[,1])
+def=as.matrix(def,nrow=1)
+res=table(new_cl,def)
+mat1=confusionMatrix(res)
+print("Ensemble PAC is ")
+print(mat1$overall[1])
+
+#############################3
+# svm prediction accuracy
+# just for comparing with SVM
+res1=table(a1,def)
+mat2=confusionMatrix(res1)
+
+print("SVM PAC is ")
+print(mat2$overall[1])

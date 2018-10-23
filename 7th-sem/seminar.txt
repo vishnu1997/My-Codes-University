@@ -1,0 +1,64 @@
+Assignment of variable
+y = 46
+
+Assignment of vector
+x <- c(3,4,"5","6","7","8","9")
+
+Since few elements of the vector is string all are converted into strings 
+
+get a substring of values from a vector
+qw = x[4:7]
+
+Convert all the string back into numbers
+x <- as.numeric(x)
+
+Summary of vector
+z = summary(x)
+
+find mean of a vector
+mean()
+
+find median of a vector
+median()
+
+find sum of all the elements in a vector
+sum()
+
+create a matrix
+w1 = matrix(qw,ncol=2)
+
+
+wq = x[1:4]
+w2 = matrix(wq,ncol=2)
+
+Matrix multiplication
+w3 = w1%*%w2
+
+Accessing each element in matrix
+for(i in 1:dim(w3)[1]){
+    for(j in 1:dim(w3)[2]) {
+        print(w3[i,j])
+    }
+}
+
+transpose of a matrix
+tran = t(w3)
+
+join two rows 
+w4 = rbind(c(1,2,3),c(4,5,6))
+
+join two columns
+cbind()
+
+how to read from csv
+tab = read.csv("cancer.csv")
+
+how to read if the table has column names
+tab = read.csv("cancer.csv",HEADER="True")
+
+access a column in a dataset 
+head(iris)
+iris$Species
+
+
+
